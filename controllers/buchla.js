@@ -15,6 +15,27 @@ router.get('/', (req, res)=>{
 //d
 
 //u
+router.put('/:id', (req, res)=>{
+    if (req.body.acceptsNegative === 'on'){
+        req.body.acceptsNegative = true
+    } else {
+        req.body.acceptsNegative = false
+    }
+    if (req.body.isModule === 'on'){
+        req.body.isModule = true
+    } else {
+        req.body.isModule = false
+    }
+    Buchla.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedBuchla)=>{
+        if (err) {
+            res.status(500).send({
+                err: error.message
+            })
+        } else {
+            res.redirect('/buchla')
+        }
+    })
+})
 
 //c
 router.post('/', (req, res)=>{
@@ -41,6 +62,19 @@ router.post('/', (req, res)=>{
 })
 
 //e
+router.get('/:id/edit', (req, res)=>{
+    Buchla.findById(req.params.id, (err, buchlaToEdit)=>{
+        if (err) {
+            res.status(500).send({
+                err: error.message
+            })
+        } else {
+            res.render('buchla/Edit', {
+                buchla: buchlaToEdit
+            })
+        }
+    })
+})
 
 //s
 

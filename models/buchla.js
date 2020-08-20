@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const buchlaSchema = new mongoose.Schema({
     model: {type: Number, required: true},
     name: {type: String, required: true},
-    function: String,
+    modFunction: String,
     description: String,
     img: String,
     voltageMax: Number,

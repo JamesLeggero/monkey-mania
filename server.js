@@ -15,7 +15,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use(methodOverride('_method'))
 
 const mongoURI = process.env.MONGO_URI
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 db.once('open', ()=>{
     console.log('denver, co')
 })
@@ -23,11 +23,12 @@ db.once('open', ()=>{
 const buchlaController = require('./controllers/buchla.js')
 app.use('/buchla', buchlaController)
 
-const Test = require('./models/tests.js')
 
 app.get('/', (req, res)=>{
     res.send('super intro up')
 })
+
+// const Test = require('./models/tests.js')
 
 // app.get('/seed', (req,res) =>{
 

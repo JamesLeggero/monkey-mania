@@ -8,7 +8,7 @@ class New extends React.Component {
             <form action='/buchla' method='POST'>
                 <h3>Model</h3><input type='text' name='model'/>
                 <h3>Name</h3><input type='text' name='name'/>
-                <h3>Function</h3><input type='text' name='function'/>
+                <h3>Function</h3><input type='text' name='modFunction'/>
 
                 <h3>Description</h3><input type='text' name='description'/>
                 <h3>Image Source</h3><input type='text' name='img'/>
