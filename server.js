@@ -20,9 +20,27 @@ db.once('open', ()=>{
     console.log('denver, co')
 })
 
+const Test = require('./models/tests.js')
+
 app.get('/', (req, res)=>{
     res.send('super intro up')
 })
+
+app.get('/seed', (req,res) =>{
+
+
+
+
+
+    Test.create({
+        name: 'James',
+        age: 35,
+        isPerson: true
+    }, (err, data)=>{
+        res.redirect('/')
+    })
+})
+
 
 app.listen(PORT, ()=>{
     console.log('monkey mania')
