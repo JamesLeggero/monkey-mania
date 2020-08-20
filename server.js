@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000
 app.use(express.static('public'))
 app.use(express.urlencoded({extended : false}))
 app.set('view engine', 'jsx')
-app.use('jsx', require('express-react-views').createEngine())
+app.engine('jsx', require('express-react-views').createEngine())
 app.use(methodOverride('_method'))
 
 const mongoURI = process.env.MONGO_URI
@@ -20,26 +20,25 @@ db.once('open', ()=>{
     console.log('denver, co')
 })
 
+const buchlaController = require('./controllers/buchla.js')
+app.use('/buchla', buchlaController)
+
 const Test = require('./models/tests.js')
 
 app.get('/', (req, res)=>{
     res.send('super intro up')
 })
 
-app.get('/seed', (req,res) =>{
+// app.get('/seed', (req,res) =>{
 
-
-
-
-
-    Test.create({
-        name: 'James',
-        age: 35,
-        isPerson: true
-    }, (err, data)=>{
-        res.redirect('/')
-    })
-})
+//     Test.create({
+//         name: 'James',
+//         age: 35,
+//         isPerson: true
+//     }, (err, data)=>{
+//         res.redirect('/')
+//     })
+// })
 
 
 app.listen(PORT, ()=>{
