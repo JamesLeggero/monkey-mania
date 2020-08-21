@@ -23,6 +23,12 @@ db.once('open', ()=>{
 const buchlaController = require('./controllers/buchla.js')
 app.use('/buchla', buchlaController)
 
+// const sergeController = require('./controllers/serge.js')
+// app.use('/serge', sergeController)
+
+// const ciatController = require('./controllers/ciat.js')
+// app.use('/ciat', ciatController)
+
 
 app.get('/', (req, res)=>{
     res.send('super intro up')
