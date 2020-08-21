@@ -4,7 +4,18 @@ const Buchla = require('../models/buchla.js')
 
 //i
 router.get('/', (req, res)=>{
-    res.send('Buchla microsite')
+    // res.send('Buchla microsite')
+    Buchla.find({}, (err, allBuchla)=>{
+        if(err) {
+            res.status(500).send({
+                err: error.message
+            })
+        } else {
+            res.render('buchla/Index', {
+                buchlas: allBuchla
+            })
+        }
+    })
 })
 
 //n
