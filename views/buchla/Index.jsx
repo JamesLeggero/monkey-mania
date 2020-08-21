@@ -16,9 +16,9 @@ class Index extends React.Component {
                         </a>
                     )
                 })}
-
-
-
+                <form action='buchla/new' method='GET'>
+                        <input type='submit' value='Create New Module'/>
+                    </form>
             </div>
         )
     }

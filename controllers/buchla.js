@@ -24,6 +24,17 @@ router.get('/', (req, res)=>{
     })
 
 //d
+router.delete('/:id', (req, res)=>{
+    Buchla.findByIdAndRemove(req.params.id, (err, deletedBuchla)=>{
+        if (err) {
+            res.status(500).send({
+                err: error.message
+            })
+        } else {
+            res.redirect('/buchla')
+        }
+    })
+})
 
 //u
 router.put('/:id', (req, res)=>{
@@ -88,6 +99,19 @@ router.get('/:id/edit', (req, res)=>{
 })
 
 //s
+router.get('/:id', (req, res)=>{
+    Buchla.findById(req.params.id, (err, foundBuchla)=>{
+        if (err) {
+            res.status(500).send({
+                err: error.message
+            })
+        } else {
+            res.render('buchla/Show', {
+                buchla: foundBuchla
+            })
+        }
+    })
+})
 
 
 
