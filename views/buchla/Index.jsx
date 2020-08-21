@@ -10,7 +10,7 @@ class Index extends React.Component {
   <div className="hero-body">
     <div className="container">
       <h1 className="title is-size-4-mobile ">
-        Buchla USA<span style={{float: 'right'}}><a href='/buchla/new' className='button is-success'>Add New Module</a></span>
+        Buchla USA<span style={{float: 'right'}}><a href='/buchla/new' className='button is-dark'>Add New Module</a></span>
       </h1>
       <h2 className="subtitle is-size-6-mobile has-text-weight-light">
         Berkeley, CA
@@ -18,6 +18,11 @@ class Index extends React.Component {
     </div>
   </div>
 </section>
+
+
+
+
+
 
                 {/* {buchlas.map((buchla, i) => {
                     return (
@@ -31,9 +36,10 @@ class Index extends React.Component {
                         </a>
                     )
                 })} */}
-                <form action='buchla/new' method='GET'>
+
+                {/* <form action='buchla/new' method='GET'>
                     <input type='submit' value='Create New Module' />
-                </form>
+                </form> */}
 
             </Layout>
         )
