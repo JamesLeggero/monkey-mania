@@ -1,6 +1,6 @@
 const React = require('react')
 
-class Layout extends React.Component {
+class Default extends React.Component {
     render(){
         return (
             <html>
@@ -33,4 +33,4 @@ class Layout extends React.Component {
     }
 }
 
-module.exports = Layout
+module.exports = Default
