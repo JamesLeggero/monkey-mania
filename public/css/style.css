@@ -9,9 +9,12 @@
 
 
 
-form {
+/* form {
     margin: 50px;
-    /* float: right;
-    text-align: right */
-}
+    
+} */
+
+/* input[type='textarea']{
+    text-overflow: wrap;
+} */
 
