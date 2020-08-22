@@ -10,7 +10,7 @@ class Edit extends React.Component {
 <Default>
                 <BuchlaLayout>
                     <div >
-                        <div className='columns' style={{height: '100%', margin: '50px'}}>
+                        <div className='columns' style={{height: '100%', padding: '50px'}}>
                             <div className='column is-half'>
                         
 
@@ -109,7 +109,7 @@ class Edit extends React.Component {
 
 
 
-                    <input type='submit' name='' value='Update Buchla'/>
+                    <input className='button is-success' type='submit' name='' value='Update Buchla'/>
                 
             </form>
             </div>

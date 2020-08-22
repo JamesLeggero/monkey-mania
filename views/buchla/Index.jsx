@@ -9,7 +9,7 @@ class Index extends React.Component {
             <Default>
                 <BuchlaLayout>
                     
-                    <div className='columns is-multiline is-centered'>
+                    <div className='columns is-multiline is-centered' style={{padding: '50px'}}>
 
                         {buchlas.map((buchla, i) => {
                             return (
