@@ -8,27 +8,32 @@ class Index extends React.Component {
         return (
             <Default>
                 <BuchlaLayout>
+                    
                     <div className='columns is-multiline is-centered'>
 
                         {buchlas.map((buchla, i) => {
                             return (
                                 <div className='column is-one-third'>
-                                    <a href={`/buchla/${buchla._id}`}>
-                                        <div className='cardis-small' height='100%' >
+                                    
+                                        <div key={buchla._id}className='card is-small' height='100%' >
                                             <header className='card-header'>
                                                 <p className='card-header-title is-centered'>{buchla.model}e {buchla.name}</p>
                                             </header>
                                             <div className='card-image'>
-                                                <figure class='image'>
+                                                <figure className='image'>
+                                                <a href={`/buchla/${buchla._id}`}>
                                                     <img src={buchla.img} />
+                                                    </a>
                                                 </figure>
                                             </div>
                                         </div>
-                                    </a>
+                                    
                                 </div>
                             )
                         })}
                     </div>
+                    
+                    
                 </BuchlaLayout>
             </Default>
         )

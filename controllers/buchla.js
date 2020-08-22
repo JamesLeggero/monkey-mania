@@ -102,9 +102,9 @@ router.get('/:id/edit', (req, res)=>{
 router.get('/:id', (req, res)=>{
     Buchla.findById(req.params.id, (err, foundBuchla)=>{
         if (err) {
-            res.status(500).send({
-                err: error.message
-            })
+            // res.status(500).send({
+            //     err: error.message
+            // })
         } else {
             res.render('buchla/Show', {
                 buchla: foundBuchla

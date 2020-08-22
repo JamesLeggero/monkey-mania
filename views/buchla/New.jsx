@@ -7,8 +7,9 @@ class New extends React.Component {
         return(
             <Default>
                 <BuchlaLayout>
+                    <div style={{height: '100vh'}}>
 
-                <form action='/buchla' method='POST'>
+                <form style={{maxWidth: '33%'}} action='/buchla' method='POST'>
                     <div className='field'>
                         <label className='label'>Model Number</label>
                         <div className='control'>
@@ -24,7 +25,7 @@ class New extends React.Component {
                     </div>
 
                         <div className="field">
-                            <label for='modFunction' className="label">Primary Function</label>
+                            <label htmlFor='modFunction' className="label">Primary Function</label>
                             <div className="control">
                                 <div className="select">
 
@@ -43,7 +44,7 @@ class New extends React.Component {
                         <div className='field'>
                             <label className='label'>Description</label>
                             <div className='control'>
-                                <input type='text' className='textarea' name='description' />
+                                <input  type='text' className='textarea' name='description' />
                             </div>
                         </div>
 
@@ -53,6 +54,20 @@ class New extends React.Component {
                         <input type='text' name='img'/>
                         </div>
                     </div>
+
+                    <div className="field">
+                            <label htmlFor='audioOutput' className="label">Audio I/O</label>
+                            <div className="control">
+                                <div className="select">
+
+                                    <select name='audioOutput'>
+                                        <option value='Banana'>Banana</option>
+                                        <option value='1/8 Inch'>1/8 Inch</option> 
+                                        <option value='Other'>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
                     <div className='field'>
                         <label className='label'>Max Voltage</label>
@@ -114,6 +129,7 @@ class New extends React.Component {
                 
             </form>
         </div> */}
+        </div>
 
 
         </BuchlaLayout>

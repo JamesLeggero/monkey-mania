@@ -3,7 +3,7 @@ const React = require('react')
 class BuchlaLayout extends React.Component{
     render(){
         return (
-            <body>
+            <body style={{backgroundColor: 'rgba(0, 209, 178,.2)', height: '100%'}}>
             <nav className='navbar is-success'>
                     <div className='navbar-start'>
                         <div className='navbar-brand'>

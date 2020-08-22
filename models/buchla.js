@@ -6,6 +6,7 @@ const buchlaSchema = new mongoose.Schema({
     modFunction: String,
     description: String,
     img: String,
+    audioOutput: String,
     voltageMax: {type: Number, required: true},
     voltageMin: {type: Number, required: true},
     acceptsNegative: {type: Boolean, default: false},

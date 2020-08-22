@@ -6,7 +6,7 @@ class Default extends React.Component {
             <html>
                 <head>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"/>
-                    {/* <link rel="stylesheet" href="style.css"/> */}
+                    <link rel="stylesheet" href="/css/style.css"/>
                 </head>
                 <body className='is-family-sans-serif has-fixed-bottom'>  
                     <nav className='navbar is-warning'>

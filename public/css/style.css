@@ -2,3 +2,16 @@
     display: flex;
     flex-direction: row;
 } */
+
+/* * {
+    background-color: blue;
+} */
+
+
+
+form {
+    margin: 50px;
+    /* float: right;
+    text-align: right */
+}
+
