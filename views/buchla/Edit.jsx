@@ -1,6 +1,7 @@
 const React = require('react')
 const Default = require('../components/Default.jsx')
 const BuchlaLayout = require('../components/BuchlaLayout.jsx')
+const Comment = require ()
 
 class Edit extends React.Component {
     render(){

@@ -20,6 +20,9 @@ db.once('open', ()=>{
     console.log('denver, co')
 })
 
+// const Comment = require('./models/comments.js')
+
+
 const buchlaController = require('./controllers/buchla.js')
 app.use('/buchla', buchlaController)
 
@@ -32,6 +35,10 @@ app.use('/buchla', buchlaController)
 
 app.get('/', (req, res)=>{
     res.send('super intro up')
+})
+
+app.get('/explore', (req, res)=>{
+    res.render('Explore')
 })
 
 // const Test = require('./models/tests.js')

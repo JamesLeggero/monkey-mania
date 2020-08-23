@@ -104,7 +104,7 @@ class New extends React.Component {
 
 
 
-                    <input type='submit' name='' value='Create New Buchla'/>
+                    <input className='button is-success' type='submit' name='' value='Create New Buchla'/>
                 
             </form>
 
