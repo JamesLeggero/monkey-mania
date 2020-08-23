@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Buchla = require('../models/buchla.js')
+const Buchla = require('../models/modules.js')
 
 //i
 router.get('/', (req, res)=>{

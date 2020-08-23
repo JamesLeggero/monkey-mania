@@ -12,6 +12,7 @@ class Index extends React.Component {
                     <div className='columns is-multiline is-centered' style={{padding: '50px'}}>
 
                         {buchlas.map((buchla, i) => {
+                            if (buchla.brand==='Buchla'){
                             return (
                                 <div className='column is-one-third'>
                                     
@@ -29,7 +30,7 @@ class Index extends React.Component {
                                         </div>
                                     
                                 </div>
-                            )
+                            )}
                         })}
                     </div>
                     

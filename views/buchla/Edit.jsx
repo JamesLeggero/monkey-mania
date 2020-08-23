@@ -1,11 +1,11 @@
 const React = require('react')
 const Default = require('../components/Default.jsx')
 const BuchlaLayout = require('../components/BuchlaLayout.jsx')
-const Comment = require ()
+// const Comment = require ()
 
 class Edit extends React.Component {
     render(){
-        const { _id, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.buchla
+        const { _id, brand, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.buchla
         return(
 
 <Default>
@@ -16,6 +16,7 @@ class Edit extends React.Component {
                         
 
                 <form style={{maxWidth: '100%'}} action={`/buchla/${_id}?_method=PUT`} method='POST'>
+                <input type='text' style={{display: 'none'}} name='brand' value={brand}/>
                     <div className='field'>
                         <label className='label'>Model Number</label>
                         <div className='control'>

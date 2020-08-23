@@ -10,6 +10,7 @@ class New extends React.Component {
                     <div style={{height: '100vh', margin: '50px', marginBottom: '-50px'}}>
 
                 <form style={{maxWidth: '33%'}} action='/buchla' method='POST'>
+                    <input type='text' style={{display: 'none'}} name='brand' value='Buchla'/>
                     <div className='field'>
                         <label className='label'>Model Number</label>
                         <div className='control'>
