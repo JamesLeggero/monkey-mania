@@ -36,7 +36,8 @@ app.use('/ciat', ciatController)
 
 
 app.get('/', (req, res)=>{
-    res.send('super intro up')
+    // res.send('super intro up')
+    res.render('Welcome')
 })
 
 app.get('/about', (req, res)=>{
