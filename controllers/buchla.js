@@ -8,7 +8,7 @@ router.get('/', (req, res)=>{
     Buchla.find({}, (err, allBuchla)=>{
         if(err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('buchla/Index', {
@@ -28,7 +28,7 @@ router.delete('/:id', (req, res)=>{
     Buchla.findByIdAndRemove(req.params.id, (err, deletedBuchla)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/buchla')
@@ -51,7 +51,7 @@ router.put('/:id', (req, res)=>{
     Buchla.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedBuchla)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/buchla')
@@ -75,7 +75,7 @@ router.post('/', (req, res)=>{
     Buchla.create(req.body, (err, createdBuchla)=>{
         if(err){
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/buchla')
@@ -88,7 +88,7 @@ router.get('/:id/edit', (req, res)=>{
     Buchla.findById(req.params.id, (err, buchlaToEdit)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('buchla/Edit', {
@@ -102,9 +102,9 @@ router.get('/:id/edit', (req, res)=>{
 router.get('/:id', (req, res)=>{
     Buchla.findById(req.params.id, (err, foundBuchla)=>{
         if (err) {
-            // res.status(500).send({
-            //     err: error.message
-            // })
+            res.status(500).send({
+                error: err.message
+            })
         } else {
             res.render('buchla/Show', {
                 buchla: foundBuchla
