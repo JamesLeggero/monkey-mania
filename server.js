@@ -20,17 +20,19 @@ db.once('open', ()=>{
     console.log('denver, co')
 })
 
+const Module = require('./models/modules.js')
+
 // const Comment = require('./models/comments.js')
 
 
 const buchlaController = require('./controllers/buchla.js')
 app.use('/buchla', buchlaController)
 
-// const sergeController = require('./controllers/serge.js')
-// app.use('/serge', sergeController)
+const sergeController = require('./controllers/serge.js')
+app.use('/serge', sergeController)
 
-// const ciatController = require('./controllers/ciat.js')
-// app.use('/ciat', ciatController)
+const ciatController = require('./controllers/ciat.js')
+app.use('/ciat', ciatController)
 
 
 app.get('/', (req, res)=>{
@@ -38,7 +40,17 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/explore', (req, res)=>{
-    res.render('Explore')
+    Module.find({}, (err, allModules)=>{
+        if(err) {
+            res.status(500).send({
+                err: error.message
+            })
+        } else {
+            res.render('Explore', {
+                modules: allModules
+            })
+        }
+    })
 })
 
 // const Test = require('./models/tests.js')

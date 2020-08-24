@@ -21,8 +21,7 @@ class Default extends React.Component {
                         <div className='navbar-end'>
                             <div className='navbar-brand'>
                         <a className='navbar-item is-tab' href='/about'>About</a>
-                        <a className='navbar-item is-tab' href='/compare'>Compare</a>
-                        <a className='navbar-item is-tab' href='/function'>Explore</a>
+                        <a className='navbar-item is-tab' href='/explore'>Explore</a>
                         </div>
                         </div>  
                             </nav>

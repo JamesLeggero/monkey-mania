@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Ciat = require('../models/ciat.js')
+const Ciat = require('../models/modules.js')
 
 //i
 router.get('/', (req, res)=>{

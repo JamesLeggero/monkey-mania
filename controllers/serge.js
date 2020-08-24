@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Serge = require('../models/serge.js')
+const Serge = require('../models/modules.js')
 
 //i
 router.get('/', (req, res)=>{
