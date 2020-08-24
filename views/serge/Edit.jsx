@@ -5,7 +5,7 @@ const SergeLayout = require('../components/SergeLayout.jsx')
 
 class Edit extends React.Component {
     render(){
-        const { _id, brand, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.serge
+        const { _id, lowerCaseBrand, brand, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.serge
         return(
 
 <Default>
@@ -16,6 +16,7 @@ class Edit extends React.Component {
                         
 
                 <form style={{maxWidth: '100%'}} action={`/serge/${_id}?_method=PUT`} method='POST'>
+                <input type='text' style={{display: 'none'}} name='lowerCaseBrand' value={lowerCaseBrand}/>    
                 <input type='text' style={{display: 'none'}} name='brand' value={brand}/>
                     
 
@@ -90,7 +91,7 @@ class Edit extends React.Component {
                     <div className='field'>
                         <div className='control'>
                             <label className='checkbox'>
-                                <input type='checkbox' name='acceptsNegative' checked={acceptsNegative ? 'checked' : ''}/>Accepts Negative Voltage?
+                                <input type='checkbox' name='acceptsNegative' checked={acceptsNegative ? 'checked' : ''}/> Accepts Negative Voltage?
                             </label>
                         </div>
                     </div>
@@ -98,7 +99,7 @@ class Edit extends React.Component {
                     <div className='field'>
                         <div className='control'>
                             <label className='checkbox'>
-                                <input type='checkbox' name='isModule' checked={acceptsNegative ? 'checked' : ''} />Is a Module?
+                                <input type='checkbox' name='isModule' checked={isModule ? 'checked' : ''} /> Is a Module?
                             </label>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ class Index extends React.Component {
                     <div className='columns is-multiline is-centered' style={{padding: '30px'}}>
 
                         {ciats.map((ciat, i) => {
-                            if (ciat.brand==='Ciat'){
+                            if (ciat.brand==='Ciat-Lonbarde'){
                             return (
                                 <div className='column is-one-quarter'>
                                     

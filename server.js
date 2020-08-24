@@ -39,6 +39,20 @@ app.get('/', (req, res)=>{
     res.send('super intro up')
 })
 
+app.get('/about', (req, res)=>{
+    Module.find({}, (err, allModules)=>{
+        if(err) {
+            res.status(500).send({
+                err: error.message
+            })
+        } else {
+            res.render('About', {
+                modules: allModules
+            })
+        }
+    })
+})
+
 app.get('/explore', (req, res)=>{
     Module.find({}, (err, allModules)=>{
         if(err) {

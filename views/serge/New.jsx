@@ -10,13 +10,10 @@ class New extends React.Component {
                     <div style={{height: '100vh', margin: '50px', marginBottom: '-50px'}}>
 
                 <form style={{maxWidth: '33%'}} action='/serge' method='POST'>
+
+                <input type='text' style={{display: 'none'}} name='lowerCaseBrand' value='serge'/>
                     <input type='text' style={{display: 'none'}} name='brand' value='Serge'/>
-                    {/* <div className='field'>
-                        <label className='label'>Model Number</label>
-                        <div className='control'>
-                        <input type='text' name='model'/>
-                        </div>
-                    </div> */}
+                   
 
                     <div className='field'>
                         <label className='label'>Name</label>
@@ -89,7 +86,7 @@ class New extends React.Component {
                     <div className='field'>
                         <div className='control'>
                             <label className='checkbox'>
-                                <input type='checkbox' name='acceptsNegative' />Accepts Negative Voltage?
+                                <input type='checkbox' name='acceptsNegative' /> Accepts Negative Voltage?
                             </label>
                         </div>
                     </div>
@@ -97,7 +94,7 @@ class New extends React.Component {
                     <div className='field'>
                         <div className='control'>
                             <label className='checkbox'>
-                                <input type='checkbox' name='isModule' checked />Is a Module?
+                                <input type='checkbox' name='isModule' checked /> Is a Module?
                             </label>
                         </div>
                     </div>

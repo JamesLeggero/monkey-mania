@@ -1,29 +1,25 @@
 const React = require('react')
 const Default = require('../components/Default.jsx')
-const BuchlaLayout = require('../components/BuchlaLayout.jsx')
+const CiatLayout = require('../components/CiatLayout.jsx')
 // const Comment = require ()
 
 class Edit extends React.Component {
     render(){
-        const { _id, lowerCaseBrand, brand, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.buchla
+        const { _id, lowerCaseBrand, brand, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.ciat
         return(
 
 <Default>
-                <BuchlaLayout>
+                <CiatLayout>
                     <div >
                         <div className='columns' style={{height: '100%', padding: '50px'}}>
                             <div className='column is-half'>
                         
 
-                <form style={{maxWidth: '100%'}} action={`/buchla/${_id}?_method=PUT`} method='POST'>
+                <form style={{maxWidth: '100%'}} action={`/ciat/${_id}?_method=PUT`} method='POST'>
+
                 <input type='text' style={{display: 'none'}} name='lowerCaseBrand' value={lowerCaseBrand}/>    
                 <input type='text' style={{display: 'none'}} name='brand' value={brand}/>
-                    <div className='field'>
-                        <label className='label'>Model Number</label>
-                        <div className='control'>
-                        <input type='text' name='model' value={model}/>
-                        </div>
-                    </div>
+                    
 
                     <div className='field'>
                         <label className='label'>Name</label>
@@ -101,18 +97,11 @@ class Edit extends React.Component {
                         </div>
                     </div>
 
-                    <div className='field'>
-                        <div className='control'>
-                            <label className='checkbox'>
-                                <input type='checkbox' name='isModule' checked={isModule ? 'checked' : ''} /> Is a Module?
-                            </label>
-                        </div>
-                    </div>
 
 
 
 
-                    <input className='button is-success' type='submit' name='' value='Update Buchla'/>
+                    <input className='button is-success' type='submit' name='' value='Update Ciat'/>
                 
             </form>
             </div>
@@ -124,7 +113,7 @@ class Edit extends React.Component {
                 </div>
             </div>
             </div>
-            </BuchlaLayout>
+            </CiatLayout>
             </Default>
 
 

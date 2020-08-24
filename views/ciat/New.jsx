@@ -1,34 +1,22 @@
 const React = require('react')
 const Default = require('../components/Default.jsx')
-const BuchlaLayout = require('../components/BuchlaLayout.jsx')
-// const Comment = require ()
+const CiatLayout = require('../components/CiatLayout.jsx')
 
-class Edit extends React.Component {
-    render(){
-        const { _id, lowerCaseBrand, brand, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.buchla
+class New extends React.Component {
+   render(){
         return(
+            <Default>
+                <CiatLayout>
+                    <div style={{height: '100vh', margin: '50px', marginBottom: '-50px'}}>
 
-<Default>
-                <BuchlaLayout>
-                    <div >
-                        <div className='columns' style={{height: '100%', padding: '50px'}}>
-                            <div className='column is-half'>
-                        
-
-                <form style={{maxWidth: '100%'}} action={`/buchla/${_id}?_method=PUT`} method='POST'>
-                <input type='text' style={{display: 'none'}} name='lowerCaseBrand' value={lowerCaseBrand}/>    
-                <input type='text' style={{display: 'none'}} name='brand' value={brand}/>
-                    <div className='field'>
-                        <label className='label'>Model Number</label>
-                        <div className='control'>
-                        <input type='text' name='model' value={model}/>
-                        </div>
-                    </div>
+                <form style={{maxWidth: '33%'}} action='/ciat' method='POST'>
+                    <input type='text' style={{display: 'none'}} name='lowerCaseBrand' value='ciat'/>
+                    <input type='text' style={{display: 'none'}} name='brand' value='Ciat-Lonbarde'/>
 
                     <div className='field'>
                         <label className='label'>Name</label>
                         <div className='control'>
-                        <input type='text' name='name' value={name}/>
+                        <input type='text' name='name'/>
                         </div>
                     </div>
 
@@ -37,7 +25,7 @@ class Edit extends React.Component {
                             <div className="control">
                                 <div className="select">
 
-                                    <select name='modFunction' value={modFunction}>
+                                    <select name='modFunction'>
                                         <option value='Oscillator'>Oscillator</option>
                                         <option value='Filter'>Filter</option>
                                         <option value='Envelope'>Envelope</option>
@@ -52,7 +40,7 @@ class Edit extends React.Component {
                         <div className='field'>
                             <label className='label'>Description</label>
                             <div className='control'>
-                                <textarea className='textarea' name='description' value={description}>
+                            <textarea className='textarea' name='description'>
                                 
                                 </textarea>
                             </div>
@@ -61,7 +49,7 @@ class Edit extends React.Component {
                         <div className='field'>
                         <label className='label'>Image Source</label>
                         <div className='control'>
-                        <input type='text' name='img' value={img}/>
+                        <input type='text' name='img'/>
                         </div>
                     </div>
 
@@ -70,7 +58,7 @@ class Edit extends React.Component {
                             <div className="control">
                                 <div className="select">
 
-                                    <select name='audioOutput' value={audioOutput}>
+                                    <select name='audioOutput'>
                                         <option value='Banana'>Banana</option>
                                         <option value='1/8 Inch'>1/8 Inch</option> 
                                         <option value='Other'>Other</option>
@@ -82,55 +70,45 @@ class Edit extends React.Component {
                     <div className='field'>
                         <label className='label'>Max Voltage</label>
                         <div className='control'>
-                        <input type='text' name='voltageMax' value={voltageMax}/>
+                        <input type='text' name='voltageMax'/>
                         </div>
                     </div>
                     
                     <div className='field'>
                         <label className='label'>Min Voltage</label>
                         <div className='control'>
-                        <input type='text' name='voltageMin' value={voltageMin}/>
+                        <input type='text' name='voltageMin'/>
                         </div>
                     </div>
 
                     <div className='field'>
                         <div className='control'>
                             <label className='checkbox'>
-                                <input type='checkbox' name='acceptsNegative' checked={acceptsNegative ? 'checked' : ''}/> Accepts Negative Voltage?
+                                <input type='checkbox' name='acceptsNegative' /> Accepts Negative Voltage?
                             </label>
                         </div>
                     </div>
 
-                    <div className='field'>
-                        <div className='control'>
-                            <label className='checkbox'>
-                                <input type='checkbox' name='isModule' checked={isModule ? 'checked' : ''} /> Is a Module?
-                            </label>
-                        </div>
-                    </div>
+                    
+                                <input style={{display: 'none'}}type='checkbox' name='isModule' />
+                  
 
 
 
 
-                    <input className='button is-success' type='submit' name='' value='Update Buchla'/>
+                    <input className='button is-success' type='submit' name='' value='Create New Ciat'/>
                 
             </form>
-            </div>
-            <div className='column is-half'>
-                <figure className='image'>
-                <img style={{maxWidth: '250px'}} src={img} />
-                </figure>
 
-                </div>
-            </div>
-            </div>
-            </BuchlaLayout>
+
+                
+        </div>
+
+
+        </CiatLayout>
             </Default>
-
-
-
-            )
-        }
+        )
     }
-    
-    module.exports = Edit
+}
+
+module.exports = New
