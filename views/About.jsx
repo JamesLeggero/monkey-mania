@@ -8,7 +8,7 @@ class About extends React.Component {
                 // console.log(this.props.modules[rand]['name'])
                 const rand = Math.floor(Math.random() * this.props.modules.length)
             return (
-                <div className='column is-one-half'>
+                <div className='column is-half'>
                                     
                                         <div key={this.props.modules[rand]['_id']} className='card is-small' style={{maxWidth: '300px'}} >
                                             <header className='card-header'>
@@ -44,6 +44,7 @@ class About extends React.Component {
                     
                 </div>
                 </div>
+                
                 </body>
             </Default>
         )

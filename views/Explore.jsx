@@ -65,7 +65,7 @@ class Explore extends React.Component{
         // const { _id, brand, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.modules
         return (
             <Default>
-                <div style={{height: '100vh', backgroundColor: 'rgba(255, 221, 87, .2)'}}>
+                <div style={{height: '100%', backgroundColor: 'rgba(255, 221, 87, .2)'}}>
                 <div className='columns' style={{padding: '50px'}}>
 
                 <div className='column is-half comparison-table'>
@@ -115,11 +115,11 @@ class Explore extends React.Component{
                         </tbody>
                     </table>
                 </div>
-                <div className='column is-half dropdown-comparison'>
-                    <h1 className='title has-text-right'>Compare By Function</h1>
+                <div className='column is-half'>
+                    <h1 className='title has-text-right' >Compare By Function</h1>
                     <form onSubmit={this.handleSubmit}>
 
-                    <div className="field">
+                    <div className="field has-text-right">
                             <label htmlFor='modFunction' className="label">Primary Function
                             <div className="control">
                                 <div className="select">
@@ -139,13 +139,11 @@ class Explore extends React.Component{
 
                         </div>
                         </form>
-                        
+                        </div>
+                        </div>
 
 
-                </div>
-
-
-                </div>
+                
 
 
 
