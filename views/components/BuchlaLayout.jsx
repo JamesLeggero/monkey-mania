@@ -1,9 +1,16 @@
 const React = require('react')
 
+
 class BuchlaLayout extends React.Component{
     render(){
+        const buchlaStyle = {
+            backgroundColor: 'rgba(0, 209, 178,.2)',
+            minHeight: '100vh',
+            maxHeight: '150vh',
+            height: '5000px'
+        }
         return (
-            <body style={{backgroundColor: 'rgba(0, 209, 178,.2)', height: '100%'}}>
+            <body style={buchlaStyle}>
             <nav className='navbar is-success'>
                     <div className='navbar-start'>
                         <div className='navbar-brand'>

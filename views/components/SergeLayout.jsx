@@ -2,8 +2,14 @@ const React = require('react')
 
 class SergeLayout extends React.Component{
     render(){
+        const sergeStyle = {
+            backgroundColor: 'rgba(32, 156, 238,.2)',
+            minHeight: '100vh',
+            maxHeight: '150vh',
+            height: '5000px'
+        }
         return (
-            <body style={{backgroundColor: 'rgba(32, 156, 238,.2)', height: '100%'}}>
+            <body style={sergeStyle}>
             <nav className='navbar is-info'>
                     <div className='navbar-start'>
                         <div className='navbar-brand'>

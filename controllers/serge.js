@@ -8,7 +8,7 @@ router.get('/', (req, res)=>{
     Serge.find({}, (err, allSerge)=>{
         if(err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('serge/Index', {
@@ -28,7 +28,7 @@ router.delete('/:id', (req, res)=>{
     Serge.findByIdAndRemove(req.params.id, (err, deletedSerge)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/serge')
@@ -51,7 +51,7 @@ router.put('/:id', (req, res)=>{
     Serge.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedSerge)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/serge')
@@ -75,7 +75,7 @@ router.post('/', (req, res)=>{
     Serge.create(req.body, (err, createdSerge)=>{
         if(err){
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/serge')
@@ -88,7 +88,7 @@ router.get('/:id/edit', (req, res)=>{
     Serge.findById(req.params.id, (err, sergeToEdit)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('serge/Edit', {
@@ -103,7 +103,7 @@ router.get('/:id', (req, res)=>{
     Serge.findById(req.params.id, (err, foundSerge)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('serge/Show', {

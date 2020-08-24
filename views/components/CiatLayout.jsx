@@ -1,9 +1,16 @@
 const React = require('react')
 
+
 class CiatLayout extends React.Component{
     render(){
+        const ciatStyle = {
+            backgroundColor: 'rgba(255, 56, 96,.2)',
+            minHeight: '100vh',
+            maxHeight: '150vh',
+            height: '5000px'
+        }
         return (
-            <body style={{backgroundColor: 'rgba(255, 56, 96,.2)', height: '100%'}}>
+            <body style={ciatStyle}>
             <nav className='navbar is-danger'>
                     <div className='navbar-start'>
                         <div className='navbar-brand'>

@@ -50,6 +50,7 @@ class Explore extends React.Component{
    
     
     render(){
+
     
         // const displaySelected = (param)=>{
         //     // const value = modFunction.value
@@ -117,14 +118,14 @@ class Explore extends React.Component{
                 </div>
                 <div className='column is-half'>
                     <h1 className='title has-text-right' >Compare By Function</h1>
-                    <form onSubmit={this.handleSubmit}>
+                    <form id='explore-form'>
 
                     <div className="field has-text-right">
                             <label htmlFor='modFunction' className="label">Primary Function
                             <div className="control">
                                 <div className="select">
 
-                                    <select name='modFunction' onChange={this.handleChange}>
+                                    <select name='modFunction'>
                                         <option value='Oscillator'>Oscillator</option>
                                         <option value='Filter'>Filter</option>
                                         <option value='Envelope'>Envelope</option>

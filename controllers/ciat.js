@@ -8,7 +8,7 @@ router.get('/', (req, res)=>{
     Ciat.find({}, (err, allCiat)=>{
         if(err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('ciat/Index', {
@@ -28,7 +28,7 @@ router.delete('/:id', (req, res)=>{
     Ciat.findByIdAndRemove(req.params.id, (err, deletedCiat)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/ciat')
@@ -51,7 +51,7 @@ router.put('/:id', (req, res)=>{
     Ciat.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedCiat)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/ciat')
@@ -75,7 +75,7 @@ router.post('/', (req, res)=>{
     Ciat.create(req.body, (err, createdCiat)=>{
         if(err){
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.redirect('/ciat')
@@ -88,7 +88,7 @@ router.get('/:id/edit', (req, res)=>{
     Ciat.findById(req.params.id, (err, ciatToEdit)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('ciat/Edit', {
@@ -103,7 +103,7 @@ router.get('/:id', (req, res)=>{
     Ciat.findById(req.params.id, (err, foundCiat)=>{
         if (err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('ciat/Show', {
