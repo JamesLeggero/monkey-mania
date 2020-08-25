@@ -80,11 +80,11 @@ app.post('/about', (req, res)=>{
                 error:err.message
             })
         } else {
-            // Message.create(req.body, (err, createdMessage)=>{
+            Message.create(req.body, (err, createdMessage)=>{
 
-            //     res.redirect('/about')
-            // })
-            res.redirect('/about')
+                res.redirect('/about')
+            })
+            // res.redirect('/about')
         }
     })
 }
