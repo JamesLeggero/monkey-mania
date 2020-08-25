@@ -5,6 +5,7 @@ const app = express()
 const mongoose= require('mongoose')
 const db = mongoose.connection
 const methodOverride = require('method-override')
+const nodemailer=require('nodemailer')
 
 const PORT = process.env.PORT || 3000
 
@@ -21,6 +22,7 @@ db.once('open', ()=>{
 })
 
 const Module = require('./models/modules.js')
+const Message = require('./models/messages.js')
 
 // const Comment = require('./models/comments.js')
 
@@ -53,6 +55,41 @@ app.get('/about', (req, res)=>{
         }
     })
 })
+
+app.post('/about', (req, res)=>{
+    const gmailUser = process.env.GMAIL_USER
+    const gmailPass = process.env.GMAIL_PASS
+    const smtpTrans = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: gmailUser,
+            pass: gmailPass
+        }
+    })
+    const mailOpts = {
+        from: 'test',
+        to: gmailUser,
+        subject: `New MM message from ${req.body.name}`,
+        text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+    }
+    smtpTrans.sendMail(mailOpts, (err, response)=>{
+        if (err){
+            res.status(500).send({
+                error:err.message
+            })
+        } else {
+            // Message.create(req.body, (err, createdMessage)=>{
+
+            //     res.redirect('/about')
+            // })
+            res.redirect('/about')
+        }
+    })
+}
+
+)
 
 app.get('/explore', (req, res)=>{
     

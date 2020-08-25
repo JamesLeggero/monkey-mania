@@ -44,10 +44,42 @@ class About extends React.Component {
                 
                 </div>
                 
-                {/* <div className='column is-half'>
+                <div className='column is-half'>
+                    <h1 className='title has-text-centered'>Get in Touch</h1>
                     
-                    {twoItems()}
-                    </div> */}
+                    <form action='/about' method='POST'>
+                                <div className="field">
+                                    <label className="label">Name</label>
+                                    <div class="control">
+                                        <input className="input" name='name' type="text" placeholder="Text input" />
+                                    </div>
+
+                                </div>
+
+                                <div className="field">
+                                    <label className="label">Email</label>
+                                    <div class="control">
+                                        <input className="input" name='email' type="text" placeholder="Text input" />
+                                    </div>
+
+                                </div>
+
+                                <div className="field">
+                                    <label className="label">Message</label>
+                                    <div class="control">
+                                        <textarea className="textarea" name='message' type="text" placeholder="Text input" />
+                                    </div>
+
+                                </div>
+
+                                <input className='button is-success' type='submit' name='' value='Send Message'/>
+
+                                
+
+
+
+                    </form>
+                </div>
                     
                 </div>
                
