@@ -32,13 +32,7 @@ class Explore extends React.Component {
 
 
     render() {
-        // const myFunc = ()=>{
-        //     const button = document.getElementById('explore-submit')
-        //     button.onlick = ()=>{
-
-        //         console.log('hi')
-        //     }
-        // }
+      
 
 
 
@@ -47,12 +41,7 @@ class Explore extends React.Component {
 
         return (
             <Default>
-                {/* {function testing() {
-                    console.log('test')
-                }} */}
                 
-                {/* {localStorage.getItem('selectedValue')? localStorage.getItem('selectedValue') : undefined } */}
-                {/* {console.log(this.props.modules[2]['name'])} */}
                 <div style={{ height: '100%', backgroundColor: 'rgba(255, 221, 87, .2)' }}>
                     <div className='columns' style={{ padding: '50px' }}>
 
@@ -105,7 +94,7 @@ class Explore extends React.Component {
                         </div>
                         <div className='column is-half'>
                             <h1 className='title has-text-right' >Compare By Function</h1>
-                            <form id='explore-form' action=''>
+                            <form id='explore-form'>
 
                                 <div className="field has-text-right">
                                     <label htmlFor='modFunction' className="label">Primary Function
@@ -113,8 +102,11 @@ class Explore extends React.Component {
                                             <div className="select">
 
                                                 <select 
-                                                 id='explore-select' name='modFunction'>
+                                                 id='explore-select' name='selectedModFunction'
+                                                 value={this.props.testing.selectedModFunction}>
+                                                     
                                                     <option value='Oscillator'>Oscillator</option>
+                                                    
                                                     <option value='Filter'>Filter</option>
                                                     <option value='Envelope'>Envelope</option>
                                                     <option value='VCA'>VCA</option>
@@ -125,18 +117,23 @@ class Explore extends React.Component {
                                         </div>
                                     </label>
                                     <input id='explore-submit' className='is-primary' type="submit" value="Submit" />
-                                    {/* <section id='display-section'>
-                                {this.props.modules.map((module)=>{
-                                    if (module.modFunction === localStorage.getItem('selectedValue')) {
-                                        return (
-                                            <div>
-                                                <img src={module.img}/>
-                                            </div>
-                                        )
-                                    }
-                                })}
+                                    <section id='display-section'>
+                                        {/* <h2>hello</h2> */}
+                                        
+                                        <h2>{this.props.testing.selectedModFunction}</h2>
+                                        
+                                        {
+                                            this.props.modules.map((module)=>{
+                                                if (module.modFunction === this.props.testing.selectedModFunction){
+                                                    return (
+                                                        <img src={module.img} />
+                                                    )
+                                                }
+                                            })
+                                        }
                                 
-                            </section> */}
+                                
+                            </section>
 
                                 </div>
                             </form>

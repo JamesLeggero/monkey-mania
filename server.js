@@ -44,7 +44,7 @@ app.get('/about', (req, res)=>{
     Module.find({}, (err, allModules)=>{
         if(err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
             res.render('About', {
@@ -55,14 +55,21 @@ app.get('/about', (req, res)=>{
 })
 
 app.get('/explore', (req, res)=>{
+    
     Module.find({}, (err, allModules)=>{
         if(err) {
             res.status(500).send({
-                err: error.message
+                error: err.message
             })
         } else {
+            // console.log(testing)
+            // console.log(req.body.name)
+            const testing = req.query
+            console.log(testing)
             res.render('Explore', {
-                modules: allModules
+                testing: testing,
+                modules: allModules,
+                
             })
         }
     })
