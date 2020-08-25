@@ -8,11 +8,11 @@ class About extends React.Component {
                 // console.log(this.props.modules[rand]['name'])
                 const rand = Math.floor(Math.random() * this.props.modules.length)
             return (
-                <div className='column is-half'>
+                <div className='column is-half is-centered'>
                                     
                                         <div key={this.props.modules[rand]['_id']} className='card is-small' style={{maxWidth: '300px'}} >
                                             <header className='card-header'>
-                                                <p className='card-header-title is-centered'>{this.props.modules[rand]['name']}</p>
+                                                <p className='card-header-title is-centered'>{this.props.modules[rand]['brand']} {this.props.modules[rand]['name']}</p>
                                             </header>
                                             <div style={{padding: '20px'}}className='card-image'>
                                                 <figure className='image'>
@@ -35,15 +35,22 @@ class About extends React.Component {
                     <div className='column is-half'>
                 <div className='container has-text-centered'>
                 <h1 className='title'>Welcome to Monkey Mania!</h1>
-                <p className='has-text-justified'>I made Money Mania to showcase some of my favorite kinds of monophonic synthsizers - those with banana jacks! Many of these synths are fully- or semi-modular and open up a large world of fascinating soundscapes. You can get started by checking out the format by brand, or just click on a module to learn more!</p>
+                <p className='has-text-justified'>I made Monkey Mania to showcase some of my favorite kinds of monophonic synthsizers - those with banana jacks! Many of these synths are fully- or semi-modular and open up a large world of fascinating soundscapes. You can get started by checking out the format by brand, or just click on a module to learn more!</p>
                 </div>
+                <div style={{marginBottom: '30px'}}></div>
+
+                {twoItems()}
+                
+                
                 </div>
-                <div className='column is-half'>
-                    {/* {console.log(this.props.modules)} */}
+                
+                {/* <div className='column is-half'>
+                    
                     {twoItems()}
+                    </div> */}
                     
                 </div>
-                </div>
+               
                 
                 </body>
             </Default>

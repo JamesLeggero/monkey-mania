@@ -21,7 +21,7 @@ class Index extends React.Component {
                                                 <p className='card-header-title is-centered'>{ciat.name}</p>
                                             </header>
                                             <div style={{padding: '20px'}}className='card-image'>
-                                                <figure className='image'>
+                                                <figure className='image is-centered'>
                                                 <a href={`/ciat/${ciat._id}`}>
                                                     <img src={ciat.img} />
                                                     </a>

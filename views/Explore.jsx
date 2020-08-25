@@ -18,31 +18,21 @@ const styleCheck = () => {
         default:
             return 'none'
     }
-
-
-
 }
 
-
-
-
 class Explore extends React.Component {
-
-
-
-
     render() {
-      
-
-
-
-        
-
+        const exploreStyle = {
+            backgroundColor: 'rgba(255, 221, 87, .2)',
+            minHeight: '100vh',
+            maxHeight: '150vh',
+            height: '5000px'
+        }
 
         return (
             <Default>
                 
-                <div style={{ height: '100%', backgroundColor: 'rgba(255, 221, 87, .2)' }}>
+                <div style={exploreStyle}>
                     <div className='columns' style={{ padding: '50px' }}>
 
                         <div className='column is-half comparison-table'>
@@ -101,11 +91,14 @@ class Explore extends React.Component {
                             <div className="control">
                                             <div className="select">
 
-                                                <select 
+                                                <select
                                                  id='explore-select' name='selectedModFunction'
                                                  value={this.props.testing.selectedModFunction}>
+                                                     <option 
+                                                    value=''>Select Function...</option>
                                                      
-                                                    <option value='Oscillator'>Oscillator</option>
+                                                    <option 
+                                                    value='Oscillator'>Oscillator</option>
                                                     
                                                     <option value='Filter'>Filter</option>
                                                     <option value='Envelope'>Envelope</option>
@@ -116,21 +109,34 @@ class Explore extends React.Component {
                                             </div>
                                         </div>
                                     </label>
-                                    <input id='explore-submit' className='is-primary' type="submit" value="Submit" />
+                                    <input id='explore-submit' className='button is-success' type="submit" value="Submit" />
                                     <section id='display-section'>
                                         {/* <h2>hello</h2> */}
                                         
-                                        <h2>{this.props.testing.selectedModFunction}</h2>
+                                        {/* <h2>{this.props.testing.selectedModFunction}</h2> */}
+                                        <div className='columns is-centered' style={{marginTop: '35px'}}>
                                         
                                         {
                                             this.props.modules.map((module)=>{
                                                 if (module.modFunction === this.props.testing.selectedModFunction){
                                                     return (
+                                                        <div className='column is-one-quarter'>
+                                                            <div className='card'>
+                                                            <header className='card-header'>
+                                                <p className='card-header-title is-centered is-size-7'>{module.name}</p>
+                                            </header>
+                                                            <div style={{padding: '10px'}}className='card-image'>
+                                                            <a href={`/${module.lowerCaseBrand}/${module.id}`}>
                                                         <img src={module.img} />
+                                                        </a>
+                                                        </div>
+                                                        </div>
+                                                        </div>
                                                     )
                                                 }
                                             })
                                         }
+                                        </div>
                                 
                                 
                             </section>
