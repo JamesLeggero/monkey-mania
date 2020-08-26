@@ -123,7 +123,7 @@ class Explore extends React.Component {
                                                         <div className='column is-one-quarter'>
                                                             <div className='card'>
                                                             <header className='card-header'>
-                                                <p className='card-header-title is-centered is-size-7'>{module.name}</p>
+                                                <p className='card-header-title is-centered is-size-7-mobile'>{module.name}</p>
                                             </header>
                                                             <div style={{padding: '10px'}}className='card-image'>
                                                             <a href={`/${module.lowerCaseBrand}/${module.id}`}>

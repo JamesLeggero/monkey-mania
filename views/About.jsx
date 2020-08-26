@@ -35,7 +35,7 @@ class About extends React.Component {
                     <div className='column is-half'>
                 <div className='container has-text-centered'>
                 <h1 className='title'>Welcome to Monkey Mania!</h1>
-                <p className='has-text-justified'>I made Monkey Mania to showcase some of my favorite kinds of monophonic synthsizers - those with banana jacks! Many of these synths are fully- or semi-modular and open up a large world of fascinating soundscapes. You can get started by checking out the format by brand, or just click on a module to learn more!</p>
+                <p className='has-text-justified'>I made Monkey Mania to showcase some of my favorite kinds of monophonic synthesizers - those with banana jacks! Many of these synths are fully- or semi-modular and open up a large world of fascinating soundscapes. You can get started by checking out the format by brand, or just click on a module to learn more!</p>
                 </div>
                 <div style={{marginBottom: '30px'}}></div>
 
