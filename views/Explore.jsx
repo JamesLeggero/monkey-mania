@@ -27,12 +27,13 @@ class Explore extends React.Component {
             minHeight: '100vh',
             maxHeight: '150vh',
             height: '5000px'
+            
         }
 
         return (
             <Default>
                 
-                <div style={exploreStyle}>
+                <div className='explorePage' style={exploreStyle}>
                     <div className='columns' style={{ padding: '50px' }}>
 
                         <div className='column is-half comparison-table'>
@@ -47,7 +48,6 @@ class Explore extends React.Component {
                             <table className='table'>
                                 <thead>
                                     <tr>
-                                        <th>Brand</th>
                                         <th>Name</th>
                                         <th>Audio</th>
                                         <th>V+/-</th>
@@ -57,7 +57,6 @@ class Explore extends React.Component {
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Brand</th>
                                         <th>Name</th>
                                         <th>Audio</th>
                                         <th>V+/-</th>
@@ -70,8 +69,10 @@ class Explore extends React.Component {
 
                                         return (
                                             <tr style={{ backgroundColor: styleCheck }}>
-                                                <th>{module.brand}</th>
-                                                <td>{module.model ? `${module.model}e ${module.name}` : `${module.name}`}</td>
+                                                
+                                                
+                                                <th><b>{module.brand}</b> {module.model ? `${module.model}e` : `${module.abbreviation}`}</th>
+                                    
                                                 <td>{module.audioOutput}</td>
                                                 <td>{module.voltageMax}/{module.voltageMin}</td>
                                                 <td style={{ backgroundColor: module.acceptsNegative ? 'rgba(0,255,0, .2)' : 'rgba(255,0,0,.2' }}>{module.acceptsNegative ? 'Yes' : 'No'}</td>
@@ -120,12 +121,12 @@ class Explore extends React.Component {
                                             this.props.modules.map((module)=>{
                                                 if (module.modFunction === this.props.testing.selectedModFunction){
                                                     return (
-                                                        <div className='column is-one-quarter'>
+                                                        <div className='column'>
                                                             <div className='card'>
                                                             <header className='card-header'>
-                                                <p className='card-header-title is-centered is-size-7-mobile'>{module.name}</p>
+                                                <p className='card-header-title is-centered'>{module.abbreviation}</p>
                                             </header>
-                                                            <div style={{padding: '10px'}}className='card-image'>
+                                                            <div style={{padding: '10px'}}className='card-image is-vcentered'>
                                                             <a href={`/${module.lowerCaseBrand}/${module.id}`}>
                                                         <img src={module.img} />
                                                         </a>

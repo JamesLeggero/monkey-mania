@@ -22,6 +22,13 @@ class New extends React.Component {
                         </div>
                     </div>
 
+                    <div className='field'>
+                                <label className='label'>Abbreviation</label>
+                                <div className='control'>
+                                    <input type='text' name='abbreviation' />
+                                </div>
+                            </div>
+
                         <div className="field">
                             <label htmlFor='modFunction' className="label">Primary Function</label>
                             <div className="control">

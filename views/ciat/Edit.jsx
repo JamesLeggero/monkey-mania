@@ -5,7 +5,7 @@ const CiatLayout = require('../components/CiatLayout.jsx')
 
 class Edit extends React.Component {
     render(){
-        const { _id, lowerCaseBrand, brand, model, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.ciat
+        const { _id, lowerCaseBrand, brand, model, name, abbreviation, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.ciat
         return(
 
 <Default>
@@ -27,6 +27,13 @@ class Edit extends React.Component {
                         <input type='text' name='name' value={name}/>
                         </div>
                     </div>
+
+                    <div className='field'>
+                                <label className='label'>Abbreviation</label>
+                                <div className='control'>
+                                    <input type='text' name={abbreviation} />
+                                </div>
+                            </div>
 
                         <div className="field">
                             <label htmlFor='modFunction' className="label">Primary Function</label>

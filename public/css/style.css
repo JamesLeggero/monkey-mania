@@ -18,3 +18,19 @@
     text-overflow: wrap;
 } */
 
+
+/* .buttons {
+    white-space: normal;
+    text-overflow: wrap;
+} */
+
+/* @media (max-width: 600px) {
+    .explorePage {
+        flex-direction: 'column'
+    }
+} */
+
+table {
+    table-layout: auto;
+
+}

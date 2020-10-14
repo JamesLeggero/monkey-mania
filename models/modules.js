@@ -6,6 +6,7 @@ const moduleSchema = new mongoose.Schema({
     brand: {type: String, required: true},
     model: Number,
     name: {type: String, required: true},
+    abbreviation: String,
     modFunction: String,
     description: String,
     img: String,

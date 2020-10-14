@@ -5,7 +5,7 @@ const SergeLayout = require('../components/SergeLayout.jsx')
 
 class Edit extends React.Component {
     render(){
-        const { _id, lowerCaseBrand, brand, name, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.serge
+        const { _id, lowerCaseBrand, brand, name, abbreviation, modFunction, description, img, audioOutput, voltageMax, voltageMin, acceptsNegative, isModule } = this.props.serge
         return(
 
 <Default>
@@ -26,6 +26,13 @@ class Edit extends React.Component {
                         <input type='text' name='name' value={name}/>
                         </div>
                     </div>
+
+                    <div className='field'>
+                                <label className='label'>Abbreviation</label>
+                                <div className='control'>
+                                    <input type='text' name={abbreviation} />
+                                </div>
+                            </div>
 
                         <div className="field">
                             <label htmlFor='modFunction' className="label">Primary Function</label>
